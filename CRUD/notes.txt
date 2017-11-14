@@ -1,0 +1,40 @@
+
+SQL NOTES
+
+CRUD - Create, Read Update, Delete
+
+Create
+  - INSERT INTO
+    - ex: INSERT INTO cats(name, age) VALUES('Taco', 14);
+
+Read
+  - SELECT expression
+    - expressions
+      - *
+        - ex: SELECT * FROM cats;
+      - column name(s)
+        - ex: SELECT name FROM cats;
+        - ex: SELECT name, age FROM cats;
+          - order matters
+  - WHERE clause
+    - ex: SELECT * FROM cats WHERE age=4;
+    - ex: SELECT * FROM cats WHERE name="Ringo";
+    - case insensitive
+  - AS
+    - Aliases - specify how data is being read back
+      - ex: SELECT cat_id AS id, name FROM cats;
+      - ex: SELECT name AS 'cat name', breed AS 'kitty breed' FROM cats;
+    - This doesn't change the field name
+
+Update
+  - UPDATE, SET, WHERE
+    - ex: UPDATE cats SET breed='Shorthair'
+          WHERE breed='Tabby';
+    - ex: UPDATE cats SET age='14'
+          WHERE name='Misty';
+  - Try selecting, then update.
+
+Delete
+  - DELETE
+    - ex: DELETE FROM cats WHERE name='Egg';
+    - DELETE FROM cats; - deletes everything inside table
