@@ -1,0 +1,32 @@
+String Functions
+
+CONCAT
+  - combine data for cleaner output
+  - CONCAT(column, anotherColumn)
+    - ex: CONCAT(author_fname, author_lname)
+  - CONCAT(column, 'text', anotherColumn, 'more text')
+    - ex: CONCAT(author_fname, ' ', author_lname)
+  - ex: SELECT
+          CONCAT(author_fname, ' ', author_lname)
+        AS 'full name'
+        FROM books;
+  - CONCAT_WS - with seperator
+    - SELECT CONCAT-WS('-', title, author_fname, author_fname) FROM books;
+
+SUBSTRING
+  - select portions of a string
+  - SELECT SUBSTRING('Hello World', 1, 4);
+    - returns "Hell"
+  - SELECT SUBSTRING('Hello World', 7);
+    - returns "World"
+  - SELECT SUBSTRING('Hello World', -3);
+    - returns "rld"
+
+  "..." ex:
+  SELECT
+    CONCAT (
+      SUBSTRING(title, 1, 10),
+      '...'
+    ) AS 'short title'
+  FROM books;
+    
