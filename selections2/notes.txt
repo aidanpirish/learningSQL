@@ -1,0 +1,24 @@
+More Selectors
+
+DISTINCT
+  - ex: SELECT DISTINCT author_lname FROM books;
+  - distict for two field(two 'Harris')
+    - SELECT DISTINCT CONCAT(author_fname, ' ', author_lname) FROM books;
+    or
+    - SELECT DISTINCT author_fname, author_lname FROM books;
+
+ORDER BY
+  - sorting data
+  - Ascending(ASC) by default, descend by DESC at the end
+  - ex: SELECT author_lname FROM books ORDER BY author_lname;
+  - works with numbers too
+    - SELECT released_year FROM books ORDER BY released_year DESC;
+  - You dont have to include ordered field
+    - SELECT title, pages FROM books ORDER BY released_year;
+  - ORDER BY shortcut
+    - SELECT title, author_fname, author_lname
+      FROM books ORDER BY 2;
+    - This will order by author_fname
+  - ORDER BY two columns
+      - SELECT author_lname, title
+        FROM books ORDER BY 1, released_year DESC;

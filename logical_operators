@@ -1,0 +1,11 @@
+SELECT Fname, Lname
+FROM EMPLOYEE
+WHERE Salary >= ALL(SELECT Salary
+                    FROM EMPLOYEE
+                    WHERE DNO = 5)
+
+SELECT Fname, Lname
+FROM EMPLOYEE
+WHERE ssn NOT EXIST(SELECT essn
+                    FROM WORKS_ON
+                    WHERE ssn=essn)

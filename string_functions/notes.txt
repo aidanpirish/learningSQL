@@ -29,4 +29,26 @@ SUBSTRING
       '...'
     ) AS 'short title'
   FROM books;
-    
+
+REPLACE
+  - replace parts of a String
+  - ex: SELECT REPLACE('Hello World', 'Hell', '%$@#');
+  - ex: SELECT REPLACE(name, 'o', '0') FROM cats;
+  - REPLACE and SUBSTRING
+    - SELECT
+        SUBSTRING(REPLACE(title, 'e', 3), 1, 10)
+      FROM books;
+
+REVERSE
+  - ex: SELECT REVERSE('Hello World');
+  - make a palindrome
+    - SELECT CONCAT('woof', REVERSE('woof'));
+
+CHAR_LENGTH
+  - ex: SELECT CHAR_LENGTH('Hello World');
+  - stating author_lname CHAR_LENGTH
+    - SELECT CONCAT_WS(' ', author_lname, 'is', CHAR_LENGTH(author_lname),'characters long')
+      FROM books;
+
+UPPER and LOWER
+  - ex: SELECT UPPER('hello world');
